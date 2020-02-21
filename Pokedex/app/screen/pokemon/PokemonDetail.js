@@ -10,7 +10,8 @@ export default class PokemonScreen extends PureComponent {
     state = {
         data:null,
         isLoading:true,
-        numColumns:null
+        numColumns:null,
+        styless:'center'
       }
     renderComponent(data){
         const {navigation} =this.props;
@@ -26,9 +27,11 @@ export default class PokemonScreen extends PureComponent {
         }
         if (id =='1') {
             return (
+                <TouchableOpacity onPress={()=>navigation.navigate('PokemonInfo')}>
                 <View>
                     <Block id={data.id} link={data.ThumbnailImage} name={data.name}/>
                 </View>
+                </TouchableOpacity>
             )
         }
         if (id =='2') {
@@ -55,7 +58,8 @@ export default class PokemonScreen extends PureComponent {
                 this.setState({
                     data:result.results,
                     isLoading:false,
-                    numColumns:3
+                    numColumns:3,
+                    styless:'center'
                 })
             }).catch((err) => {
                 
@@ -67,7 +71,8 @@ export default class PokemonScreen extends PureComponent {
                 this.setState({
                     data:result,
                     isLoading:false,
-                    numColumns:3
+                    numColumns:3,
+                    styless:'center'
                 })
             })
            
@@ -77,7 +82,8 @@ export default class PokemonScreen extends PureComponent {
                 this.setState({
                     data:result.megaForm,
                     isLoading:false,
-                    numColumns:1
+                    numColumns:1,
+                    styless:'stretch'
                 })
               
                 
@@ -91,7 +97,8 @@ export default class PokemonScreen extends PureComponent {
                 this.setState({
                     data:result.alolaForm,
                     isLoading:false,
-                    numColumns:1
+                    numColumns:1,
+                    styless:'stretch'
                 })
             }).catch((err) => {
                 
@@ -100,6 +107,7 @@ export default class PokemonScreen extends PureComponent {
         
     }
     render() {
+        const {styless} =this.state
         const {data,isLoading} =this.state;
         if (isLoading) {
             return(
@@ -111,7 +119,7 @@ export default class PokemonScreen extends PureComponent {
         else{
            
            return (
-            <View style={styles.container}>
+            <View style={{ flex:1,alignItems:styless,}}>
                 <FlatList
                 data={data}
                 renderItem={({item})=>this.renderComponent(item)}
@@ -123,6 +131,7 @@ export default class PokemonScreen extends PureComponent {
         }
     }
 }
+
 const styles =StyleSheet.create({   
     container:{
         flex:1,

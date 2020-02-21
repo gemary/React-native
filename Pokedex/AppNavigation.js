@@ -9,7 +9,7 @@ import ItemScreen from './app/screen/item/ItemScreen';
 import MoveScreen from './app/screen/move/MoveScreen';
 import IntroScreen from './app/screen/intro/IntroScreen';
 import EggGroupScreen from './app/screen/pokemon/PokemonDetail';
-
+import Pokemoninfo from './app/screen/pokemon/PokemonInfo';
 import { View,Image } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';  
@@ -31,6 +31,12 @@ const PokemonStack = createStackNavigator({
             headerTitle: () => <PokemonLogo />,
         }
        
+    },
+    PokemonInfo:{
+        screen:Pokemoninfo,
+        navigationOptions:{
+            headerTitle: () => <PokemonLogo />,
+        }
     }
 });
 const MoveStack = createStackNavigator({
