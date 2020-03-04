@@ -8,7 +8,8 @@ import CityScreen from './app/screen/region/CityScreen';
 import ItemScreen from './app/screen/item/ItemScreen';
 import MoveScreen from './app/screen/move/MoveScreen';
 import IntroScreen from './app/screen/intro/IntroScreen';
-import EggGroupScreen from './app/screen/pokemon/PokemonDetail';
+import PokemonDetails from './app/screen/pokemon/PokemonDetail';
+import EggoupScreen from './app/screen/pokemon/EggGroupScreen';
 import Pokemoninfo from './app/screen/pokemon/PokemonInfo';
 import { View,Image } from 'react-native';
 
@@ -26,7 +27,7 @@ const PokemonStack = createStackNavigator({
         }
     },
     PokemonDetail:{
-        screen: EggGroupScreen,
+        screen: PokemonDetails,
         navigationOptions:{
             headerTitle: () => <PokemonLogo />,
         }
@@ -34,6 +35,12 @@ const PokemonStack = createStackNavigator({
     },
     PokemonInfo:{
         screen:Pokemoninfo,
+        navigationOptions:{
+            headerTitle: () => <PokemonLogo />,
+        }
+    },
+    EggroupDetail:{
+        screen:EggoupScreen,
         navigationOptions:{
             headerTitle: () => <PokemonLogo />,
         }

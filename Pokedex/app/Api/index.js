@@ -14,9 +14,11 @@ import {
     MOVE,
     MOVE_LEARNING_METHOD,
     MOVE_TARGET,
+    MOVE_AILMENT,
     LISTPOKEMON,
     DETAILPOKEMON,
-    POKEMONFORMS
+    POKEMONFORMS,
+    EGG_GROUP_DETAIL
 } from './endpoint';
 import Base from './base';
 
@@ -52,6 +54,9 @@ export default class Api extends Base{
     }
     getEggGroup(){
         return this.callGet(EGG_GROUP);
+    }
+    getEggGroupDetail(){
+        return this.callGet(EGG_GROUP_DETAIL);
     }
     getItemAttribute(){
         return this.callGet(ITEM_ATTRIBUTE);

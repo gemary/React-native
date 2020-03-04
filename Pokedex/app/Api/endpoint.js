@@ -11,12 +11,14 @@ export const ITEM_POCKET =BASEURL +"item-pocket"
 
 export const ABILITY =BASEURL+"ability"
 export const BERRY =BASEURL+"berry"
-export const EGG_GROUP =BASEURL+"egg-group"
+export const EGG_GROUP ="https://listpokemonapi.herokuapp.com/api/ListeggGroup"
+export const EGG_GROUP_DETAIL ="https://listpokemonapi.herokuapp.com/api/eggGroup"
 export const TYPE =BASEURL+"type"
 
 export const MOVE =BASEURL+"move-damage-class"
 export const MOVE_LEARNING_METHOD =BASEURL+"move-learn-methods"
 export const MOVE_TARGET =BASEURL +"move-target"
+export const MOVE_AILMENT =BASEURL +"move-ailment"
 
 export const POKEMON =BASEURL +"pokemon-form"
 export const POKEMON_HABITAT =BASEURL +"pokemon-habitat"
