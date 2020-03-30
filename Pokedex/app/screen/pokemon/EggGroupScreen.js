@@ -13,7 +13,7 @@ export default class EggGroup extends React.Component{
         }
     }
     
-    componentDidMount(){
+   async componentDidMount(){
         const EggGroupName = this.props.navigation.getParam('name')
         Api.instance().getEggGroupDetail().then((result)=>{
             const data =result.result;
@@ -33,16 +33,24 @@ export default class EggGroup extends React.Component{
     render(){
         const renderItem =(data)=>{
             return(
-                <View>
-                    <Image style={{width:48,height:48}} source={{uri:data.image}}/>
-                    <Text>{data.name.pokemonName}</Text>
+                <View style={{
+                    flex:1,
+                    flexDirection:'row',
+                    alignItems:'center',
+                    justifyContent:'center'
+                }}>
+                    <Image style={{width:64,height:64}} source={{uri:data.image}}/>
+                    <Text style={{width:78,marginLeft:12}} >{data.name.pokemonName}</Text>
                     {data.eggGroup.map((eggData)=>{
                         return(
                             <View key={eggData.name} style={{
                                 backgroundColor:eggData.color,
-                                padding:6
+                                padding:6,
+                                width:98,height:'auto',
+                                margin:6,
+                                borderRadius:6
                                 }}>
-                                <Text>{eggData.name}</Text>
+                                <Text style={{color:'#fff',textAlign:'center'}}>{eggData.name}</Text>
                             </View>
                         )
                     })}

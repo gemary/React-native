@@ -54,11 +54,9 @@ export default class PokemonScreen extends PureComponent {
             )
         }
         if (id =='2') {
-            return(
-                <View>
-                   <Card data={data}/>
-                </View>
-            )
+            return <Card data={data}/>
+              
+            
         }
         if (id =='3') {
               return(
